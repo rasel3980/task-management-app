@@ -7,7 +7,8 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const axiosPublic = useAxiosPublic();
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
+    // console.log("user",user);
 
     const googleProvider = new GoogleAuthProvider()
     const signInWithGoogle = () => {
@@ -20,17 +21,10 @@ const AuthProvider = ({ children }) => {
       return signOut(auth)
     }
   
-    const updateUserProfile = (name, photo) => {
-      return updateProfile(auth.currentUser, {
-        displayName: name,
-        photoURL: photo,
-      })
-    }
-  
     // onAuthStateChange
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-          console.log('CurrentUser-->', currentUser?.email);
+        //   console.log('CurrentUser-->', currentUser.email);
           if (currentUser?.email) {
             setUser(currentUser);
             const userInfo = { email: currentUser?.email };
@@ -58,9 +52,8 @@ const AuthProvider = ({ children }) => {
       setLoading,
       signInWithGoogle,
       logOut,
-      updateUserProfile,
     }
-  
+    
     return (
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     )

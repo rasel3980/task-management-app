@@ -1,14 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Login from "../../Pages/Login/Login";
-import Logout from "../../Components/Logout";
+import Header from "../../Components/Header";
 
 const MainLayout = () => {
     return (
         <div>
-            <div className="flex">
-            <Login></Login>
-            <Logout></Logout>
-            </div>
+            <Header></Header>
             <Outlet></Outlet>
         </div>
     );
