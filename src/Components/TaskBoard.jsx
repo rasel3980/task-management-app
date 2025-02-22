@@ -31,7 +31,7 @@ const TaskBoard = () => {
     }
 
     if (user) {
-      const socket = io("http://localhost:5000");
+      const socket = io("https://task-management-app-server-lbsi.onrender.com");
 
       socket.on("taskUpdated", (updatedTask) => {
         setTasks((prevTasks) =>

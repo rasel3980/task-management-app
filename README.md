@@ -6,8 +6,7 @@ The **Task Management App** is a comprehensive web application designed to help 
 
 ## Live Links
 
-- **App URL**: [Your Live App URL Here](https://yourapp.com)
-- **GitHub Repository**: [GitHub Link](https://github.com/yourusername/repository-name)
+- **App URL**: [Your Live App URL Here](https://task-management-app-server-lbsi.onrender.com)
 
 ## Features
 
